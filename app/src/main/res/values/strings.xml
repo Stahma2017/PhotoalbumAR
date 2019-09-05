@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">photoalbum</string>
+    <string name="server_error">Ошибка при обращении к серверу</string>
+    <string name="no_internet_connection">Отсутствует интернет-соединение</string>
+</resources>
