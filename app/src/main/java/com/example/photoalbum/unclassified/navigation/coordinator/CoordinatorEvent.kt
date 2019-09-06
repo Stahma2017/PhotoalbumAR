@@ -1,0 +1,3 @@
+package com.example.photoalbum.unclassified.navigation.coordinator
+
+abstract class CoordinatorEvent

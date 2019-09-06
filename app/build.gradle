@@ -13,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -31,6 +32,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "com.google.android.material:material:1.0.0"
 
     // optional RxBinding
     implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.1"
@@ -67,5 +69,9 @@ dependencies {
 
     //Cicerone
     implementation "ru.terrakok.cicerone:cicerone:5.0.0"
+
+    //Anko
+    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
 }

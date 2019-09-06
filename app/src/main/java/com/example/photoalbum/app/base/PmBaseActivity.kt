@@ -4,7 +4,13 @@ import android.os.Bundle
 import android.widget.CompoundButton
 import android.widget.SearchView
 import android.widget.Toast
+import com.example.photoalbum.unclassified.rxpm.CheckControl
+import com.example.photoalbum.unclassified.rxpm.InputControl
+import com.example.photoalbum.unclassified.rxpm.SearchViewControl
+import com.example.photoalbum.unclassified.rxpm.bind
+import com.google.android.material.textfield.TextInputLayout
 import me.dmdev.rxpm.base.PmSupportActivity
+
 
 abstract class PmBaseActivity<T : BasePresentationModel> : PmSupportActivity<T>() {
     abstract val layoutRes: Int
@@ -23,9 +29,7 @@ abstract class PmBaseActivity<T : BasePresentationModel> : PmSupportActivity<T>(
         pm.showMsgCommand.observable bindTo { Toast.makeText(this, it, Toast.LENGTH_SHORT).show() }
     }
 
-
-    //Delete if not used
-  /*  //Local extension to bind the [InputControl] to the [TextInputLayout][textInputLayout], use it ONLY in [onViewCreated].
+    //Local extension to bind the [InputControl] to the [TextInputLayout][textInputLayout], use it ONLY in [onViewCreated].
     infix fun InputControl.bindTo(textInputLayout: TextInputLayout) {
         compositeUnbind.add(textInputLayout.bind(this))
     }
@@ -37,6 +41,6 @@ abstract class PmBaseActivity<T : BasePresentationModel> : PmSupportActivity<T>(
 
     infix fun SearchViewControl.bindTo(searchView: SearchView) {
         compositeUnbind.add(searchView.bind(this))
-    }*/
+    }
 
 }

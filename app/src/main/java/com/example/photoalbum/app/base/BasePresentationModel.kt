@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.annotation.StringRes
 import com.example.photoalbum.App
 import com.example.photoalbum.R
-import com.example.photoalbum.eventbus.InvalidTokenEvent
 import com.example.photoalbum.ext.ContextAware
 import com.example.photoalbum.server.base.HttpCodeHandler
 import com.example.photoalbum.server.base.HttpResponseCode
@@ -111,7 +110,6 @@ open class BasePresentationModel : PresentationModel(), ContextAware,
                         }
                     }
                 }
-                is RequestResult.Error.HttpCode401 -> eventBus.post(InvalidTokenEvent())
 
                 is RequestResult.Error.HttpCode404 -> {
                     if (httpHttpCodeHandlers.find { it.first == HttpResponseCode.CODE_404 }?.second?.invoke(
